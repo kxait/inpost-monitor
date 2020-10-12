@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            body {
+                font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                background-color: #222;
+                color: #eee;
+            }
+            #container {
+                width: fit-content;
+                margin: auto;
+            }
+            table tr td{
+                border: 1px solid #eee;
+                padding: 5px;
+            }
+            h1#alert {
+                display: none;
+            }
+        </style>
+        <script type="application/javascript" src="./status.js"></script>
+        <script type="application/javascript" src="./main.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <h1>Monitor statusu paczki InPost</h1>
+            <h1 id="alert">
+                NOWY STATUS!!!!<br>
+                <button onclick="clearStatusAlert()">SPIERDALAJ</button>
+            </h1>
+            <form>
+                <label for="input" id="count">ID Paczki</label>
+                <input type="text" style="width:200px;" oninput="setParcelNo(this)">
+            </form>
+            <div id="main">
+
+            </div>
+            <h4>Autor: cr203a na wykopie</h4>
+            <div>
+                Jesli pojawi sie nowy status, to strona zacznie krzyczec.<br>
+                Status jest sprawdzany co 10 sek.<br>
+            </div>
+        </div>
+    </body>
+</html>
