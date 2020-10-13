@@ -109,12 +109,15 @@ const getPostData = parcelNo => new Promise((resolve, reject) => {
 });
 
 const tick = async () => {
-    if(parcelNo != '') {
+    document.getElementById(statusTableId).innerText = "";
+    if(parcelNo != '' && parcelNo !== null) {
+        console.log(parcelNo);
         var data;
         try {
             data = await getPostData(parcelNo);
         }catch(e) {
             console.error(`getPostData caught exception`);
+            document.getElementById(statusTableId).innerText = `Błąd pobierania danych: ${e}`;
             return;
         }
 
